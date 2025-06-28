@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #fdf6e3 0%, #f5f7fa 100%);
-  font-family: 'SF Pro Display', 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -15,10 +15,10 @@ header {
   width: 100vw;
   background: #fff;
   color: #262626;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.5px;
-  padding: 18px 0 14px 0;
+  padding: 10px 0 8px 0;
   text-align: left;
   display: flex;
   align-items: center;
@@ -27,12 +27,12 @@ header {
   z-index: 2;
 }
 .logo {
-  font-size: 2em;
-  margin-left: 24px;
+  font-size: 1.3em;
+  margin-left: 18px;
 }
 .title {
   font-family: inherit;
-  font-size: 1.15em;
+  font-size: 1em;
   color: #262626;
 }
 main#chatContainer {
@@ -50,23 +50,24 @@ main#chatContainer {
   box-sizing: border-box;
 }
 #messages {
-  flex: 1;
+  flex: 1 1 auto;
   overflow-y: auto;
-  padding: 28px 32px 12px 32px;
+  padding: 18px 32px 12px 32px;
   background: transparent;
-  font-size: 1.18rem;
+  font-size: 1.08rem;
   box-sizing: border-box;
   min-height: 0;
   display: flex;
   flex-direction: column;
   gap: 0.6em;
+  justify-content: flex-end;
 }
 .msg {
   display: flex;
   flex-direction: column;
   max-width: 60%;
   margin-bottom: 4px;
-  font-size: 1.18rem;
+  font-size: 1.08rem;
   word-break: break-word;
   padding-bottom: 2px;
 }
@@ -112,7 +113,7 @@ main#chatContainer {
   text-align: right;
 }
 .msg .text {
-  font-size: 1.18rem;
+  font-size: 1.08rem;
   font-family: inherit;
   line-height: 1.5;
   padding: 0;
@@ -129,6 +130,7 @@ main#chatContainer {
   font-size: 1.08rem;
 }
 #chatForm {
+  flex-shrink: 0;
   display: flex;
   gap: 0;
   padding: 0 32px 18px 32px;
@@ -137,6 +139,10 @@ main#chatContainer {
   max-width: 700px;
   margin: 0 auto;
   box-sizing: border-box;
+  position: sticky;
+  bottom: 0;
+  background: #f5f7fa;
+  z-index: 3;
 }
 #messageInput {
   flex: 1;
@@ -144,7 +150,7 @@ main#chatContainer {
   border: 1px solid #e5e7eb;
   border-radius: 20px 0 0 20px;
   outline: none;
-  font-size: 1.18rem;
+  font-size: 1.08rem;
   background: #fff;
   font-family: inherit;
   box-shadow: 0 2px 8px rgba(31,38,135,0.04);
@@ -160,7 +166,7 @@ main#chatContainer {
   color: #fff;
   border-radius: 0 20px 20px 0;
   cursor: pointer;
-  font-size: 1.18rem;
+  font-size: 1.08rem;
   font-weight: 700;
   font-family: inherit;
   box-shadow: 0 2px 8px rgba(250,126,30,0.08);
@@ -192,7 +198,7 @@ main#chatContainer {
 }
 .modal-content-glass h2 {
   margin-top: 0;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #fa7e1e;
   font-family: inherit;
 }
@@ -206,7 +212,7 @@ main#chatContainer {
   padding: 14px;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  font-size: 1.18rem;
+  font-size: 1.08rem;
   margin-bottom: 16px;
   outline: none;
   background: #f3f4f6;
@@ -223,7 +229,7 @@ main#chatContainer {
   color: #fff;
   border: none;
   border-radius: 12px;
-  font-size: 1.18rem;
+  font-size: 1.08rem;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
@@ -247,8 +253,8 @@ main#chatContainer {
 }
 @media (max-width: 600px) {
   header {
-    font-size: 1.1rem;
-    padding: 10px 0 7px 0;
+    font-size: 1rem;
+    padding: 8px 0 5px 0;
   }
   main#chatContainer, #chatForm {
     max-width: 100vw;

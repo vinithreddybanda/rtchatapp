@@ -65,7 +65,10 @@ function addMessage({ user, text }, isOwn) {
   textSpan.innerHTML = escapeHtml(text);
   div.appendChild(textSpan);
   messagesDiv.appendChild(div);
-  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  // Scroll only if user is near the bottom
+  if (Math.abs(messagesDiv.scrollHeight - messagesDiv.scrollTop - messagesDiv.clientHeight) < 100) {
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  }
 }
 
 function addSystemMessage(text) {
