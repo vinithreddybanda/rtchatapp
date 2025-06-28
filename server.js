@@ -11,17 +11,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 let users = {};
 let messages = [];
+const MAX_MESSAGES = 200;
 
 io.on('connection', (socket) => {
   socket.on('join', (username) => {
     users[socket.id] = username;
+    // Only send the last 200 messages for faster initial load
+    socket.emit('history', messages.slice(-200));
     socket.broadcast.emit('user-joined', username);
-    socket.emit('history', messages);
   });
 
   socket.on('chat-message', (msg) => {
     const message = { user: users[socket.id], text: msg };
     messages.push(message);
+    if (messages.length > MAX_MESSAGES) messages.shift();
     io.emit('chat-message', message);
   });
 
