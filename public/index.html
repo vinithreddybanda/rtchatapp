@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Socket.IO Real-Time Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'SF Pro Display';
+      font-style: normal;
+      font-weight: 400;
+      src: local('SF Pro Display'), url('https://cdn.jsdelivr.net/npm/@fontsource/sf-pro-display/files/sf-pro-display-latin-400-normal.woff2') format('woff2');
+      font-display: swap;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="logo">💬</span>
+    <span class="title">Real-Time Chat</span>
+  </header>
+  <div id="joinModal" class="modal-glass">
+    <div class="modal-content-glass">
+      <h2>👋 Welcome!</h2>
+      <p class="subtitle">Enter your name to join the chat</p>
+      <input type="text" id="usernameInput" placeholder="Your name" autofocus />
+      <button id="joinBtn">Join Chat</button>
+    </div>
+  </div>
+  <main id="chatContainer" style="display:none;">
+    <div id="messages"></div>
+    <form id="chatForm">
+      <input id="messageInput" autocomplete="off" placeholder="Type a message..." />
+      <button>Send</button>
+    </form>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
